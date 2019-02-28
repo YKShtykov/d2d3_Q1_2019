@@ -1,12 +1,26 @@
-﻿using System;
-
-namespace _03
+﻿namespace _03
 {
-    class Program
+    using System;
+    using System.Diagnostics;
+
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var a = new Matrix(2000, 30, true);
+            var b = new Matrix(30, 2000, true);
+
+            var sw = Stopwatch.StartNew();
+            var c = Matrix.Multiply(a, b);
+            var time = sw.ElapsedTicks;
+
+            sw = Stopwatch.StartNew();
+            var d = Matrix.MultiplyByTpl(a, b);
+            var tplTime = sw.ElapsedTicks;
+
+            //Console.WriteLine($"Matrix A:{a}Matrix B:{b}Result:{c}Result:{d}");
+            Console.WriteLine($" Multiply time {time}.  Multiply by TPL time {tplTime}");
+            Console.ReadKey();
         }
     }
 }
