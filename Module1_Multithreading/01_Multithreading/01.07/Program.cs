@@ -13,7 +13,7 @@ namespace _07
                 .ContinueWith((arg) => DoSomeWork(),
                     TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.NotOnCanceled)
                 .ContinueWith((arg) => DoSomeWork(),
-                    TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.AttachedToParent);
+                    TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.RunContinuationsAsynchronously);
 
         }
 
