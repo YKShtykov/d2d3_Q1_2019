@@ -20,12 +20,11 @@ namespace _02._04.Model
 
         public async Task<IEnumerable<Entity>> GetAsync()
         {
-            var copy = new Entity[_store.Count];
-            _store.CopyTo(copy);
-
             return await Task.Run(() =>
             {
-                Thread.Sleep(10000);
+                var copy = new Entity[_store.Count];
+                _store.CopyTo(copy);
+                Thread.Sleep(2000);
                 return copy;
             }).ConfigureAwait(false);
         }

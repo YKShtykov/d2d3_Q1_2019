@@ -6,24 +6,27 @@ namespace _05
 
     class Program
     {
-        private static Semaphore _semaphore = new Semaphore(10,10);
-        static void Main(string[] args)
+        private static readonly Semaphore Sph = new Semaphore(1, 1);
+
+        static void Main()
         {
-            CreateThread(10);
-            Console.ReadKey();
+            CreateTaskRecursive(10);
+            Console.ReadLine();
         }
 
-        public static void CreateThread(object state)
+        public static void CreateTaskRecursive(int number)
         {
-            _semaphore.WaitOne();
-            int i = Convert.ToInt32(state);
-            Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId} thread is started. i = {i}");
-            i--;
-            if (i > 0)
+            ThreadPool.QueueUserWorkItem(num =>
             {
-                ThreadPool.QueueUserWorkItem(CreateThread,i);
-                Console.WriteLine($"Realize semaphore. Prev count:{_semaphore.Release()}");
-            }
+                Sph.WaitOne();
+                if (number <= 0) return;
+
+                var intNum = (int)num;
+                Console.WriteLine(intNum);
+
+                Sph.Release();
+                CreateTaskRecursive(--intNum);
+            }, number);
         }
     }
 }

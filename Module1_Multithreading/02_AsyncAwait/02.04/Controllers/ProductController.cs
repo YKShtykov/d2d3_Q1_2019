@@ -13,33 +13,29 @@ namespace _02._04.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly EntityRepository _repository = new EntityRepository();
+        private static readonly EntityRepository _repository = new EntityRepository();
 
-        // GET: api/Product
         [HttpGet]
         public async Task<IEnumerable<Entity>> GetAsync()
         {
             return await _repository.GetAsync();
         }
 
-        // POST: api/Product
         [HttpPost]
         public async Task PostAsync([FromBody] Entity entity)
         {
             await _repository.PostAsync(entity);
         }
 
-        // PUT: api/Product/5
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task PutAsync([FromBody] Entity entity)
         {
 
             await _repository.PostAsync(entity);
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public async Task DeleteAsync(Entity entity)
+        [HttpDelete]
+        public async Task DeleteAsync([FromBody]Entity entity)
         {
             await _repository.PostAsync(entity);
         }
