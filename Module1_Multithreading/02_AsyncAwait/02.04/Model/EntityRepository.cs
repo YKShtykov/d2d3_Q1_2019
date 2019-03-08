@@ -40,8 +40,7 @@ namespace _02._04.Model
 
         public async Task PutAsync(Entity entity)
         {
-            var entityForChange = _store.FirstOrDefault(e => e.Age == entity.Age &&
-                                                             e.FirstName == entity.FirstName &&
+            var entityForChange = _store.FirstOrDefault(e => e.FirstName == entity.FirstName &&
                                                              e.LastName == entity.LastName);
             await Task.Run(() =>
             {

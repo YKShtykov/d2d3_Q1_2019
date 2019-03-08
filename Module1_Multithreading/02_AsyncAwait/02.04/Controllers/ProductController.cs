@@ -31,13 +31,13 @@ namespace _02._04.Controllers
         public async Task PutAsync([FromBody] Entity entity)
         {
 
-            await _repository.PostAsync(entity);
+            await _repository.PutAsync(entity);
         }
 
         [HttpDelete]
         public async Task DeleteAsync([FromBody]Entity entity)
         {
-            await _repository.PostAsync(entity);
+            await _repository.DeleteAsync(entity);
         }
     }
 }
