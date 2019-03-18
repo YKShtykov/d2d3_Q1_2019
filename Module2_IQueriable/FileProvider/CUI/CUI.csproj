@@ -6,11 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ClientServer.Common\ClientServer.Common.csproj" />
+    <ProjectReference Include="..\FileProvider\FileProvider.csproj" />
   </ItemGroup>
 
 </Project>
