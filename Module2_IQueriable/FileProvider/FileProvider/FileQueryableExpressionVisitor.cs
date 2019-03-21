@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-
-namespace FileProvider
+﻿namespace FileProvider
 {
-    class FileQueryableExpressionVisitor : ExpressionVisitor
+    using System.IO;
+    using System.Linq;
+    using System.Linq.Expressions;
+
+    internal class FileQueryableExpressionVisitor : ExpressionVisitor
     {
-        private IQueryable<FileInfo> _files;
+        private readonly IQueryable<FileInfo> _files;
 
         public FileQueryableExpressionVisitor(IQueryable<FileInfo> files)
         {

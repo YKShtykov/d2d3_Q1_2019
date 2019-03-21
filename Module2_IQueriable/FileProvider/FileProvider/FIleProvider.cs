@@ -20,7 +20,9 @@
 
         public IQueryable<TElement> CreateQuery<TElement>(Expression expression)
         {
-            return (IQueryable<TElement>) new FileQueryable(expression, this);
+            return typeof(TElement) == typeof(FileInfo)
+                ? (IQueryable<TElement>) new FileQueryable(expression, this)
+                : new GenericQueryable<TElement>(expression, this);
         }
 
         public object Execute(Expression expression)
@@ -31,7 +33,7 @@
         public TResult Execute<TResult>(Expression expression)
         {
             var isEnumerable = typeof(TResult).Name == "IEnumerable`1";
-            return (TResult)FileProviderContext.Execute(expression, isEnumerable, _rootPath);
+            return (TResult) FileProviderContext.Execute(expression, isEnumerable, _rootPath);
         }
     }
 }

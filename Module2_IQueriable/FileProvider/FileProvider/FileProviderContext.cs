@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FileProvider
+﻿namespace FileProvider
 {
     using System.IO;
     using System.Linq;
     using System.Linq.Expressions;
 
-    class FileProviderContext
+    internal class FileProviderContext
     {
         public static object Execute(Expression expression, bool isEnumerable, string rootPath)
         {
@@ -17,14 +13,8 @@ namespace FileProvider
             var newExpression = visitor.Visit(expression);
 
             if (isEnumerable)
-            {
-                //files.Provider.CreateQuery(newExpression);
                 return files.Provider.CreateQuery(newExpression);
-            }
-            else
-            {
-                return files.Provider.Execute(newExpression);
-            }
+            return files.Provider.Execute(newExpression);
         }
 
         private static IQueryable<FileInfo> GetFiles(string rootPath)

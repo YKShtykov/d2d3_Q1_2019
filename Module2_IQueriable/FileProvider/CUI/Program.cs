@@ -27,7 +27,7 @@ namespace CUI
             path = @"C:\Users\Yakov_Shtykov\Desktop\CertificateTool";
             var fileQueryable = new FileQueryable(path);
 
-            var files = fileQueryable.Where(f => f.Name.Contains("Program")&& f.Length<1000).Select(f=>f.Name).ToList();
+            var files = fileQueryable.Where(f => f.Name.Contains("Program")&& f.Length<1000).Select(f=> new{ f.Name, f.Length}).ToList();
 
             Console.ReadKey();
         }
