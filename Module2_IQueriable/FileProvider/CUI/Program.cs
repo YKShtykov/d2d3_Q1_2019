@@ -11,23 +11,23 @@ namespace CUI
         {
             var path = string.Empty;
 
-            while (true)
-            {
-                Console.WriteLine("Write the root path");
-                path = Console.ReadLine();
-                if (!Directory.Exists(path))
-                {
-                    Console.WriteLine($"{path} directory does not exist");
-                }
-                else
-                {
-                    break;
-                }
-            }
+            //while (true)
+            //{
+            //    Console.WriteLine("Write the root path");
+            //    path = Console.ReadLine();
+            //    if (!Directory.Exists(path))
+            //    {
+            //        Console.WriteLine($"{path} directory does not exist");
+            //    }
+            //    else
+            //    {
+            //        break;
+            //    }
+            //}
+            path = @"C:\Users\Yakov_Shtykov\Desktop\CertificateTool";
+            var fileQueryable = new FileQueryable(path);
 
-            var fileInfos = new FileInfoSet<FileInfo>(path);
-
-            var lenghts = fileInfos.Where(f => f.Name == "1.txt" && f.IsReadOnly).Select(f => f.Length).GetEnumerator();
+            var files = fileQueryable.Where(f => f.Name.Contains("Program")&& f.Length<1000).Select(f=>f.Name).ToList();
 
             Console.ReadKey();
         }
