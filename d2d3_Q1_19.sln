@@ -44,9 +44,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientServer.Common", "Modu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module2_IQueriable", "Module2_IQueriable", "{214362C7-72A2-48BB-8A15-4BDE407005D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProvider", "Module2_IQueriable\FileProvider\FileProvider\FileProvider.csproj", "{6AB7B5AD-B1E2-4F9B-B19F-884FFF44109A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileProvider", "Module2_IQueriable\FileProvider\FileProvider\FileProvider.csproj", "{6AB7B5AD-B1E2-4F9B-B19F-884FFF44109A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUI", "Module2_IQueriable\FileProvider\CUI\CUI.csproj", "{D9C339EE-A383-4A17-AB1A-8446A94FA3FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CUI", "Module2_IQueriable\FileProvider\CUI\CUI.csproj", "{D9C339EE-A383-4A17-AB1A-8446A94FA3FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module3_Interoperating_with_Unmanaged_Code", "Module3_Interoperating_with_Unmanaged_Code", "{9684E7C5-0B82-45AA-BF23-11D5BE6075D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerStateManagemet", "Module3_Interoperating_with_Unmanaged_Code\PowerStateManagemet\PowerStateManagemet.csproj", "{14DC2344-8825-4F39-80AA-9D08F23C9B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerStateManagement.Test", "Module3_Interoperating_with_Unmanaged_Code\PowerStateManagement.Test\PowerStateManagement.Test.csproj", "{65B90186-CCCE-4666-9549-B479E0C269EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +124,14 @@ Global
 		{D9C339EE-A383-4A17-AB1A-8446A94FA3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C339EE-A383-4A17-AB1A-8446A94FA3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C339EE-A383-4A17-AB1A-8446A94FA3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DC2344-8825-4F39-80AA-9D08F23C9B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DC2344-8825-4F39-80AA-9D08F23C9B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DC2344-8825-4F39-80AA-9D08F23C9B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DC2344-8825-4F39-80AA-9D08F23C9B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B90186-CCCE-4666-9549-B479E0C269EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B90186-CCCE-4666-9549-B479E0C269EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B90186-CCCE-4666-9549-B479E0C269EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B90186-CCCE-4666-9549-B479E0C269EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +156,8 @@ Global
 		{26F33BDF-E912-478B-96BC-333BABC833E9} = {E5CA78A8-FCDE-4656-BF64-9C1F95042669}
 		{6AB7B5AD-B1E2-4F9B-B19F-884FFF44109A} = {214362C7-72A2-48BB-8A15-4BDE407005D7}
 		{D9C339EE-A383-4A17-AB1A-8446A94FA3FC} = {214362C7-72A2-48BB-8A15-4BDE407005D7}
+		{14DC2344-8825-4F39-80AA-9D08F23C9B1F} = {9684E7C5-0B82-45AA-BF23-11D5BE6075D2}
+		{65B90186-CCCE-4666-9549-B479E0C269EA} = {9684E7C5-0B82-45AA-BF23-11D5BE6075D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76D029F9-03F4-4A8B-B06A-3DA67CE571D4}
