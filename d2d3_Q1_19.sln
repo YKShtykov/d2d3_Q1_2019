@@ -52,7 +52,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module3_Interoperating_with
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerStateManagemet", "Module3_Interoperating_with_Unmanaged_Code\PowerStateManagemet\PowerStateManagemet.csproj", "{14DC2344-8825-4F39-80AA-9D08F23C9B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerStateManagement.Test", "Module3_Interoperating_with_Unmanaged_Code\PowerStateManagement.Test\PowerStateManagement.Test.csproj", "{65B90186-CCCE-4666-9549-B479E0C269EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerStateManagement.Test", "Module3_Interoperating_with_Unmanaged_Code\PowerStateManagement.Test\PowerStateManagement.Test.csproj", "{65B90186-CCCE-4666-9549-B479E0C269EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module4_Message_Queues", "Module4_Message_Queues", "{3B3629F6-AAFE-48A5-AF61-40734857F561}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputServer", "Module4_Message_Queues\InputServer\InputServer.csproj", "{1019795E-AB6E-4548-A9C6-2E167C46E276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralServer", "Module4_Message_Queues\CentralServer\CentralServer.csproj", "{B869CAD0-3A15-48A9-8F0F-17361AACC448}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,6 +138,14 @@ Global
 		{65B90186-CCCE-4666-9549-B479E0C269EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B90186-CCCE-4666-9549-B479E0C269EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B90186-CCCE-4666-9549-B479E0C269EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1019795E-AB6E-4548-A9C6-2E167C46E276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1019795E-AB6E-4548-A9C6-2E167C46E276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1019795E-AB6E-4548-A9C6-2E167C46E276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1019795E-AB6E-4548-A9C6-2E167C46E276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B869CAD0-3A15-48A9-8F0F-17361AACC448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B869CAD0-3A15-48A9-8F0F-17361AACC448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B869CAD0-3A15-48A9-8F0F-17361AACC448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B869CAD0-3A15-48A9-8F0F-17361AACC448}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,6 +172,8 @@ Global
 		{D9C339EE-A383-4A17-AB1A-8446A94FA3FC} = {214362C7-72A2-48BB-8A15-4BDE407005D7}
 		{14DC2344-8825-4F39-80AA-9D08F23C9B1F} = {9684E7C5-0B82-45AA-BF23-11D5BE6075D2}
 		{65B90186-CCCE-4666-9549-B479E0C269EA} = {9684E7C5-0B82-45AA-BF23-11D5BE6075D2}
+		{1019795E-AB6E-4548-A9C6-2E167C46E276} = {3B3629F6-AAFE-48A5-AF61-40734857F561}
+		{B869CAD0-3A15-48A9-8F0F-17361AACC448} = {3B3629F6-AAFE-48A5-AF61-40734857F561}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76D029F9-03F4-4A8B-B06A-3DA67CE571D4}
