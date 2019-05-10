@@ -1,5 +1,6 @@
 ﻿namespace CentralServer
 {
+    using Common;
     using MessageProcessors;
     using Microsoft.Azure.ServiceBus;
     using Microsoft.ServiceBus;
@@ -28,7 +29,7 @@
                 namespaceManager.CreateTopic("settingtopic");
         }
 
-
+        [LoggingPostSharpAspect]
         public void StartFileMessageProcessing()
         {
             var queueClient = new QueueClient(_connectionString, "pdffilequeue");
@@ -36,7 +37,7 @@
 
             _fileMessageProcessor.StartProcessing();
         }
-
+        [LoggingPostSharpAspect]
         public void StartStatusMessageProcessing()
         {
             var queueClient = new QueueClient(_connectionString, "statusqueue");
@@ -44,7 +45,7 @@
 
             _statusMessageProcessor.StartProcessing();
         }
-
+        [LoggingPostSharpAspect]
         public void StartSettingsMessageProcessing()
         {
             var topicClient = new TopicClient(_connectionString, "settingtopic");
@@ -52,29 +53,30 @@
 
             _settingsMessageProcessor.StartProcessing();
         }
-
+        [LoggingPostSharpAspect]
         public void StopFileMessageProcessing()
         {
             _fileMessageProcessor.CancelProcessing();
         }
-
+        [LoggingPostSharpAspect]
         public void StopStatusMessageProcessing()
         {
             _statusMessageProcessor.CancelProcessing();
         }
-
+        [LoggingPostSharpAspect]
         public void StopSettingsMessageProcessing()
         {
             _settingsMessageProcessor.CancelProcessing();
         }
 
+        [LoggingPostSharpAspect]
         public void Start()
         {
             StartFileMessageProcessing();
             StartStatusMessageProcessing();
             StartSettingsMessageProcessing();
         }
-
+        [LoggingPostSharpAspect]
         public void Stop()
         {
             StopFileMessageProcessing();

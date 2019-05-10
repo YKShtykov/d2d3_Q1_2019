@@ -10,6 +10,8 @@
     using System.Text.RegularExpressions;
     using System.Threading;
     using System.Timers;
+    using Autofac.Extras.DynamicProxy;
+    using Common;
     using MessageProcessors;
     using MigraDoc.DocumentObjectModel;
     using MigraDoc.DocumentObjectModel.Shapes;
@@ -17,7 +19,8 @@
     using Image = MigraDoc.DocumentObjectModel.Shapes.Image;
     using Timer = System.Timers.Timer;
 
-    internal class InputServer
+    [Intercept(typeof(CallLogger))]
+    internal class InputServer : IServer
     {
         private static Timer _completeFileTimer;
         private static Timer _sendStatusTimer;

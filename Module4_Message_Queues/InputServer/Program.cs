@@ -1,47 +1,27 @@
 ﻿namespace InputServer
 {
-    using System.Diagnostics;
-    using System.IO;
-    using NLog;
-    using NLog.Config;
-    using NLog.Targets;
+    using Autofac;
+    using Autofac.Extras.DynamicProxy;
+    using Common;
 
     internal class Program
     {
         private static void Main(string[] args)
         {
-            var folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-            var logFactory = ConfigureLogFactory(folder);
-
-            var server = new InputServer();
+            var container = ConfigureBuilder();
+            var server = container.Resolve<IServer>();
             server.Start();
-            //HostFactory.Run(
-            //    conf => conf.Service<InputServer>(
-            //        s =>
-            //        {
-            //            s.ConstructUsing(() => new InputServer());
-            //            s.WhenStarted(serv => serv.Start());
-            //            s.WhenStopped(serv => serv.Stop());
-            //        }
-            //    ).UseNLog(logFactory)
-            //);
         }
 
 
-        private static LogFactory ConfigureLogFactory(string folder)
+        private static IContainer ConfigureBuilder()
         {
-            var logConf = new LoggingConfiguration();
-            var fileTarget = new FileTarget
-            {
-                FileName = Path.Combine(folder, "log.txt"),
-                CreateDirs = true,
-                Name = "TargetLog",
-                Layout = "${date} ${message} ${onexception:inner=${exception:format=toString}}"
-            };
-            logConf.AddTarget(fileTarget);
-            logConf.AddRuleForAllLevels(fileTarget);
-
-            return new LogFactory(logConf);
+            var builder = new ContainerBuilder();
+            builder.RegisterType<InputServer>()
+                .As<IServer>()
+                .EnableInterfaceInterceptors();
+            builder.Register(c => new CallLogger());
+            return builder.Build();
         }
     }
 }
